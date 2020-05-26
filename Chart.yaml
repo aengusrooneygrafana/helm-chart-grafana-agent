@@ -1,0 +1,12 @@
+apiVersion: v1
+appVersion: "1.0"
+description: A Helm chart for Grafana Agent 
+name: grafana-agent
+version: 0.1.1
+home: https://prometheus.io
+icon: https://raw.githubusercontent.com/prometheus/prometheus.github.io/master/assets/prometheus_logo-cb55bb5c346.png
+maintainers:
+  - name: aengusrooney
+    email: aengus@grafana.com
+engine: gotpl
+tillerVersion: ">=2.8.0"
