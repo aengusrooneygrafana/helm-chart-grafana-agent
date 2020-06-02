@@ -2,15 +2,19 @@
 
 ## Instructions:  
 
-Update values.yaml with your URL, user name and password 
+Update values.yaml with your Hosted Metrics / Prometheus URL, user_name and password 
 
-## Example run with Minikube: 
+## Quickstart running on Minikube: 
 
-Start minikube and helm - ref: https://v2.helm.sh/docs/rbac/ 
+Start minikube and create helm service acc with cluster-admin role 
 ```
+#
 minikube start 
 kubectl config use-context minikube
-kubectl create -f ./conf/rbac_config.yaml
+#
+# ref: https://v2.helm.sh/docs/rbac/ 
+wget https://gist.githubusercontent.com/aengusrooneygrafana/f481f4c5ebf350595a3fdb5a92130002/raw/711573ea173e60783d9c98a069cf7dee6c7edf5a/rbac-config.yaml 
+kubectl create -f ./rbac_config.yaml
 helm init --service-account tiller --history-max 200 --upgrade
 ```
 
